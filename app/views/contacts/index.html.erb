@@ -1,0 +1,35 @@
+<h1>All My Contacts</h1>
+<h2>Add Contact:</h2>
+<a class="btn btn-success" role="button" href="/contacts/new">Add New Contact</a>
+  <br>
+  <br>
+<h2>Sort by Group:</h2>
+<% @groups.each do |group| %>
+  <a class="btn btn-default" role="button" href="/contacts?group=<%= group.name %>"><%= group.name %></a>
+  <br>
+  <br>
+<% end %>
+
+<table class="table">
+  <tr>
+    <th>More Detail</th>
+    <th>Last Name</th>
+    <th>First Name</th>
+    <th>Email</th>
+    <th>Phone Number</th>
+  </tr>
+  <% @contacts.each do |contact| %>
+    <tr>
+      <td><a href="/contacts/<%= contact.id %>"><%= contact.full_name %></a></td>
+      <td> <%= contact.first_name %></td>
+      <td> <%= contact.last_name %></td>
+      <td> <%= contact.email %></td>
+      <td> <%= contact.phone_number %></td>
+    </tr>
+  <% end %> 
+</table>
+
+
+
+
+

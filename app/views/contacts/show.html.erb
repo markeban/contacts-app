@@ -1,0 +1,14 @@
+<h1>Contact</h1>
+
+<p>Full Name: <%= @contact.full_name %></p>
+<p>Email: <%= @contact.email %></p>
+<p>Phone Number: <%= @contact.phone_number %></p>
+<p>Bio: <%= @contact.bio %></p>
+<p>Last updated: <%= @contact.friendly_updated_at %></p>
+<br>
+<h2>Groups that <%= @contact.first_name %> belongs to:</h2>
+<% @contact.groups.each do |group| %>
+  <p><%= group.name.capitalize %></p>
+<% end %>
+
+<p><%= link_to "Home", "/contacts" %> | <%= link_to "Edit This Contact", "/contacts/#{@contact.id}/edit" %> | <%= link_to "Delete", "/contacts/#{@contact.id}", method: :delete %></p>
