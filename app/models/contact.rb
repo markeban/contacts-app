@@ -16,4 +16,8 @@ class Contact < ActiveRecord::Base
     "+81 #{phone_number}"
   end
 
+  def group_list
+    groups.pluck(:name).join(", ")
+  end
+
 end

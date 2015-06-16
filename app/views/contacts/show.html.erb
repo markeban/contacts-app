@@ -7,8 +7,7 @@
 <p>Last updated: <%= @contact.friendly_updated_at %></p>
 <br>
 <h2>Groups that <%= @contact.first_name %> belongs to:</h2>
-<% @contact.groups.each do |group| %>
-  <p><%= group.name.capitalize %></p>
-<% end %>
+  <p><%= @contact.group_list %></p>
+
 
 <p><%= link_to "Home", "/contacts" %> | <%= link_to "Edit This Contact", "/contacts/#{@contact.id}/edit" %> | <%= link_to "Delete", "/contacts/#{@contact.id}", method: :delete %></p>
